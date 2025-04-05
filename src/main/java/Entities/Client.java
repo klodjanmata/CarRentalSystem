@@ -7,6 +7,9 @@ public class Client {
         String phone;
         String email;
 
+    public Client(String name, String surname, int phone, String email) {
+    }
+
     public int getId() {
         return id;
     }
@@ -47,7 +50,7 @@ public class Client {
         this.email = email;
     }
 
-    Client(int id, String firstName, String lastName, String phone, String email) {
+    public Client(int id, String firstName, String lastName, String phone, String email) {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;

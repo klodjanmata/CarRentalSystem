@@ -1,8 +1,5 @@
 package Entities;
 
-
-
-
     public class Vehicle {
         private int id;
         private String make;
@@ -22,47 +19,47 @@ package Entities;
             this.isAvailable = isAvailable;
         }
 
-        public int getId() {
+        private int getId() {
             return id;
         }
 
-        public String getMake() {
+        private String getMake() {
             return make;
         }
 
-        public void setMake(String make) {
+        private void setMake(String make) {
             this.make = make;
         }
 
-        public String getModel() {
+        private String getModel() {
             return model;
         }
 
-        public void setModel(String model) {
+        private void setModel(String model) {
             this.model = model;
         }
 
-        public int getYear() {
+        private int getYear() {
             return year;
         }
 
-        public void setYear(int year) {
+        private void setYear(int year) {
             this.year = year;
         }
 
-        public String getLicensePlate() {
+        private String getLicensePlate() {
             return licensePlate;
         }
 
-        public void setLicensePlate(String licensePlate) {
+        private void setLicensePlate(String licensePlate) {
             this.licensePlate = licensePlate;
         }
 
-        public double getDailyRate() {
+        private double getDailyRate() {
             return dailyRate;
         }
 
-        public void setDailyRate(double dailyRate) {
+        private void setDailyRate(double dailyRate) {
             this.dailyRate = dailyRate;
         }
 
