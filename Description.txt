@@ -1,0 +1,41 @@
+🚗 Vehicle Rental Management System – Project Requirements
+📄 Short Description
+A console-based Java application to manage vehicle rental operations, including vehicle records, client information, and rental transactions. Data is stored in a relational database, and the system supports CSV import and export functionalities.
+________________________________________
+🎯 Core Features:
+•	Vehicle Management
+o	Add, update, delete vehicle details.
+o	View vehicle inventory (availability status).
+•	Client Management
+o	Add, update, delete client details.
+o	View client list and details.
+•	Rental Transactions
+o	Record new rental (client, vehicle, rental dates, total cost).
+o	Update rental records (return date, final charges).
+o	View all current and past rentals.
+•	Import/Export:
+o	Export rental transaction history to CSV.
+o	Import vehicle and client details from CSV.
+________________________________________
+📌 Main Entities (Database Tables):
+✅ Vehicle
+•	id (int, PK)
+•	make (String)
+•	model (String)
+•	year (int)
+•	license_plate (String)
+•	daily_rate (double)
+•	is_available (boolean)
+✅ Client
+•	id (int, PK)
+•	first_name (String)
+•	last_name (String)
+•	phone (String)
+•	email (String)
+✅ Rental
+•	id (int, PK)
+•	vehicle_id (int, FK → Vehicle)
+•	client_id (int, FK → Client)
+•	rental_date (Date)
+•	return_date (Date, nullable until returned)
+•	total_cost (double)
