@@ -1,5 +1,9 @@
-import java.util.Scanner;
+package Entities;
+
+
 import Util.Helper;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -46,6 +50,7 @@ public class Main {
     }
 
 
+
     public static void printMenu() {
         System.out.println("Choose an action: \n" +
                 "1- Vehicle Management \n" +
@@ -89,6 +94,9 @@ public class Main {
     }
 
 }
+
+
+
 
 
 

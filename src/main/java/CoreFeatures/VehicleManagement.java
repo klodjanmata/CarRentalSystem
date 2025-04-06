@@ -1,22 +1,32 @@
 package CoreFeatures;
 
 
+
+
     import Entities.Vehicle;
+    import lombok.Getter;
+    import lombok.Setter;
 
     import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
     public class VehicleManagement {
-        private List<Vehicle> vehicles;
+        @Setter
+        private List<VehicleManagement> vehicles;
+        @Getter
         private Scanner scanner;
+        private Vehicle getVehicleById;
 
         public VehicleManagement() {
             vehicles = new ArrayList<>();
             scanner = new Scanner(System.in);
         }
-     
-        public void addVehicle() {
+
+        public VehicleManagement(int i, String make, String model, int year, String plate, double rate, boolean b) {
+        }
+
+        public void addVehicle(Vehicle vehicle2) {
             System.out.print("Make: ");
             String make = scanner.nextLine();
             System.out.print("Model: ");
@@ -30,10 +40,32 @@ import java.util.Scanner;
             double rate = scanner.nextDouble();
             scanner.nextLine();
 
-            Vehicle v = new Vehicle(vehicles.size() + 1, make, model, year, plate, rate, true);
+            VehicleManagement v = new VehicleManagement(vehicles.size() + 1, make, model, year, plate, rate, true);
             vehicles.add(v);
             System.out.println("Vehicle added successfully.");
         }
 
 
-    }
+        public Vehicle[] getVehicles() {
+            Vehicle[] Vehicle = new Vehicle[0];
+            return Vehicle;
+        }
+
+        public void setScanner(Scanner scanner) {
+            this.scanner = scanner;
+        }
+
+        public Vehicle getVehicleById(Object vehicleId) {
+            this.getVehicleById = getVehicleById;{
+            }
+            return getVehicleById;
+            }
+        }
+
+
+
+
+
+
+
+
