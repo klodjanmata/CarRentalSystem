@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import Entities.Vehicle;
 import Service.VehicleService;
 import Util.Helper;
 
