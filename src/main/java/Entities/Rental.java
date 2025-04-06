@@ -66,7 +66,7 @@ public class Rental {
         this.returnDate = returnDate;
         this.totalCost = totalCost;
     }
-
+   @Override
     public String toString() {
         return id + ": Client ID " + clientId + ", Vehicle ID " + vehicleId + ", From " + rentalDate + " to " + returnDate + ", Cost: $" + totalCost;
     }
