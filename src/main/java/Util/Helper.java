@@ -34,13 +34,13 @@ public class Helper {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         try{
             Date d = sdf.parse(date);
-            return d;
+            return null;
         }catch (ParseException e){
             Date d = new Date();
             d.setYear(90);
             d.setMonth(0);
             d.setDate(1);
-            return d;
+            return null;
         }
     }
 
