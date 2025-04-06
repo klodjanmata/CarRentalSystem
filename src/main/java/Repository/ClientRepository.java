@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ClientRepository {
 
-        public void save (Client client){
+        public static void save(Client client){
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 Transaction transaction = session.beginTransaction();
                 session.persist(client);
