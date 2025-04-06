@@ -34,7 +34,4 @@ public class Vehicle {
         return id + ": " + make + " " + model + " (" + year + ") - " + licensePlate +
                 " - $" + dailyRate + "/day - Available: " + isAvailable;
     }
-
-    public void setPricePerDay(double v) {
-    }
 }

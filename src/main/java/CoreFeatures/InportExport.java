@@ -47,7 +47,7 @@ import java.util.Scanner;
                     vehicle.setModel(data[1]);
                     vehicle.setMake(data[2]);
                     vehicle.setYear(Integer.parseInt(data[3]));
-                    vehicle.setPricePerDay(Double.parseDouble(data[4]));
+                    vehicle.setDailyRate(Double.parseDouble(data[4]));
                     vehicles.add(vehicle);
                 }
                 System.out.println("Vehicles imported successfully.");
