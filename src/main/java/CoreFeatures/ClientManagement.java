@@ -1,6 +1,7 @@
 package CoreFeatures;
 
 import Entities.Client;
+import Util.Helper;
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,26 +11,22 @@ public class ClientManagement {
     private Scanner scanner;
 
 public void addClient() {
+    Client c = new Client();
     System.out.print("Name: ");
-    String Name = scanner.nextLine();
+    c.setName(Helper.getStringFromUser());
     System.out.print("Surname: ");
-    String Surname = scanner.nextLine();
+    c.setSurname(Helper.getStringFromUser());
     System.out.print("Phone : ");
-    int Phone = scanner.nextInt();
-    scanner.nextLine();
-    String email = scanner.nextLine();
-    System.out.print("email: ");
+    c.setPhone(Helper.getStringFromUser());
+    System.out.print("Email: ");
+    c.setEmail(Helper.getStringFromUser());
 
-    Client c = new Client(Name, Surname, Phone, email);
     clients.add(c);
     System.out.println("Client added successfully.");
 }
 
 
-
-
     }
-
 
 
 
