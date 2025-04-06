@@ -1,69 +1,40 @@
-import CoreFeatures.VehicleManagement;
-
 import java.util.Scanner;
+import Util.Helper;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        printMenu();
-        System.out.print("Choose an action (0 to exit): ");
-        int choice = scanner.nextInt();
+        while(true) {
+            Scanner scanner = new Scanner(System.in);
+            printMenu();
+            System.out.print("Choose an action (0 to exit): ");
+            int choice = scanner.nextInt();
 
-        switch (choice) {
-            case 1:
-                System.out.println("You selected: Add Vehicle Management.");
-                printVehicleManagmentMenu();
-                break;
-            case 2:
-                System.out.println("You selected: Add Client Management.");
-                break;
-            case 3:
-                System.out.println("You selected: Add Rental Transactions.");
-                break;
-            case 4:
-                System.out.println("You selected: Add Import/Export.");
-                break;
-            case 0:
-                System.out.println("Exiting the program...");
-                break;
-            default:
-                System.out.println("Invalid choice. Please choose a number between 0 and 4.");
+            switch (choice) {
+                case 1:
+                    System.out.println("You selected: Vehicle Management.");
+                    printVehicleManagmentMenu();
+                    vehicleChoice(getChoice());
+                    break;
+                case 2:
+                    System.out.println("You selected: Add Client Management.");
+                    break;
+                case 3:
+                    System.out.println("You selected: Add Rental Transactions.");
+                    break;
+                case 4:
+                    System.out.println("You selected: Add Import/Export.");
+                    break;
+                case 0:
+                    System.out.println("Exiting the program...");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please choose a number between 0 and 4.");
+            }
+
         }
 
-        scanner.close();
     }
 
-    public static void VehicleManagmentMenu() {
-        Scanner scanner = new Scanner(System.in);
-        printVehicleManagmentMenu();
-        System.out.println("Choose an action (0 to exit)");
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("You selected: Add Vehicle Management.");
-                printVehicleManagmentMenu();
-
-                break;
-            case 2:
-                System.out.println("You selected: Add Vehicle.");
-                break;
-            case 3:
-                System.out.println("You selected: Update Vehicle.");
-                break;
-            case 4:
-                System.out.println("You selected: Delete Vehicle.");
-                break;
-            case 5:
-                System.out.println("You selected: View Vehicle Inventory.");
-                break;
-            case 0:
-                System.out.println("Back to main menu...");
-                break;
-            default:
-                System.out.println("Invalid choice. Please choose a number between 0 and 4.");
-        }
-        scanner.close();
-    }
     public static void printVehicleManagmentMenu(){
         System.out.println("Choose an action: \n" +
                 "1- Add Vehicle \n" +
@@ -77,12 +48,46 @@ public class Main {
 
     public static void printMenu() {
         System.out.println("Choose an action: \n" +
-                "1- Add Vehicle Management \n" +
-                "2- Add Client Management \n" +
-                "3- Add Rental Transactions \n" +
-                "4- Add Import/Export \n" +
+                "1- Vehicle Management \n" +
+                "2- Client Management \n" +
+                "3- Rental Transactions \n" +
+                "4- Import/Export \n" +
                 "0- Exit the Program");
     }
+
+    public static void vehicleChoice(int choice) {
+        switch (choice) {
+            case 1:
+                System.out.println("Add Vehicle");
+                break;
+            case 2:
+                System.out.println("Update Vehicle");
+                break;
+            case 3:
+                System.out.println("Delete Vehicle");
+                break;
+            case 4:
+                System.out.println("View Vehicle Inventory");
+                break;
+            case 0:
+                System.out.println("Back to main menu");
+                break;
+            default:
+                System.out.println("Invalid choice. Please choose a number between 0 and 4.");
+                break;
+        }
+    }
+
+    public static int getChoice(){
+        int choice = -1;
+        try{
+            choice = Helper.getIntFromUser();
+        }catch (Exception e){
+            choice = -1;
+        }
+        return choice;
+    }
+
 }
 
 
