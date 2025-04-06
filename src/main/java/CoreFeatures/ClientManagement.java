@@ -17,7 +17,6 @@ public void addClient() {
     System.out.print("Phone : ");
     int Phone = scanner.nextInt();
     scanner.nextLine();
-    System.out.print(": ");
     String email = scanner.nextLine();
     System.out.print("email: ");
 
