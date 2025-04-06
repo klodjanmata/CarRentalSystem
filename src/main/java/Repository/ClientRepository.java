@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ClientRepository {
 
-        public void save(Client client){
+        public void add(Client client){
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 Transaction transaction = session.beginTransaction();
                 session.persist(client);
@@ -21,7 +21,7 @@ public class ClientRepository {
                 e.printStackTrace();
             }
         }
-        public void delete(Client client) {
+        public void update(Client client) {
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 Transaction transaction = session.beginTransaction();
                 session.remove(client);
@@ -31,7 +31,7 @@ public class ClientRepository {
             }
         }
 
-        public void update(Client client) {
+        public void delete(Client client) {
             try(Session session = HibernateUtil.getSessionFactory().openSession()){
                 Transaction transaction = session.beginTransaction();
                 session.merge(client);
