@@ -20,9 +20,13 @@ public class Vehicle {
     private String make;
     @Column
     private String model;
+    @Column
     private int year;
+    @Column
     private String licensePlate;
+    @Column
     private double dailyRate;
+    @Column
     private boolean isAvailable;
 
     @Override
