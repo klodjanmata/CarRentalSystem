@@ -42,6 +42,7 @@ public class Main {
             case 1:
                 System.out.println("You selected: Add Vehicle Management.");
                 printVehicleManagmentMenu();
+
                 break;
             case 2:
                 System.out.println("You selected: Add Vehicle.");
