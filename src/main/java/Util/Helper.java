@@ -2,6 +2,7 @@ package Util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
@@ -17,8 +18,16 @@ public class Helper {
         }
         return false;
     }
+    public static double getDoubleFromUser() {
+         Scanner scanner=new Scanner(System.in);
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a valid number.");
+            scanner.next(); // Consume the invalid input
+        }
+        return scanner.nextDouble();
+    }
 
-    public static Date getDateFromUser() {
+    public static LocalDate getDateFromUser() {
         Scanner sc = new Scanner(System.in);
         System.out.print("FORMAT: dd.MM.yyyy\t");
         String date = sc.nextLine();
@@ -129,4 +138,6 @@ public class Helper {
         }
         return sum;
     }
-}
+
+    }
+
