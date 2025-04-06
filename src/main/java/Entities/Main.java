@@ -1,11 +1,11 @@
-package Entities;
-
-
-import Util.Helper;
-
 import java.util.Scanner;
 
+import Entities.Vehicle;
+import Service.VehicleService;
+import Util.Helper;
+
 public class Main {
+    private static VehicleService vehicleService = new VehicleService();
     public static void main(String[] args) {
         while(true) {
             Scanner scanner = new Scanner(System.in);
@@ -50,7 +50,6 @@ public class Main {
     }
 
 
-
     public static void printMenu() {
         System.out.println("Choose an action: \n" +
                 "1- Vehicle Management \n" +
@@ -63,7 +62,7 @@ public class Main {
     public static void vehicleChoice(int choice) {
         switch (choice) {
             case 1:
-                System.out.println("Add Vehicle");
+                vehicleService.addVehicle();
                 break;
             case 2:
                 System.out.println("Update Vehicle");
@@ -94,9 +93,6 @@ public class Main {
     }
 
 }
-
-
-
 
 
 
