@@ -41,7 +41,6 @@ public class ClientRepository {
 
         public List<Client> findAll() {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-                //return session.createQuery("from Actors").list();
                 CriteriaBuilder cb = session.getCriteriaBuilder();
                 CriteriaQuery<Client> cq = cb.createQuery(Client.class);
                 Root<Client> root = cq.from(Client.class);
