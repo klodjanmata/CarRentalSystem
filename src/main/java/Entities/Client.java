@@ -27,9 +27,6 @@ public class Client {
     @Column(unique = true, nullable = false)
     private String email;
 
-    public Client(String name, String surname, int phone, String email) {
-    }
-
     @Override
     public String toString() {
         return "Client ID: " + id +
