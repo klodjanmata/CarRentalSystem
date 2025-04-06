@@ -1,21 +1,36 @@
 package Repository;
 
+
+
 import Entities.Client;
+import Entities.Vehicle;
 import Util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ClientRepository {
+    public class VehicleRepository {
 
-        public void save (Client client){
-            try(Session session = HibernateUtil.getSessionFactory().openSession()){
+
+        public void save(Vehicle vehicle) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
                 Transaction transaction = session.beginTransaction();
-                session.persist(client);
+                session.merge(vehicle);  // Persisting the vehicle to the database
+                transaction.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void delete(Vehicle vehicle) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                Transaction transaction = session.beginTransaction();
+                session.remove(vehicle);  // Using remove to delete the vehicle
                 transaction.commit();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -23,33 +38,24 @@ public class ClientRepository {
         }
 
 
-        public void delete(Client client) {
-            try(Session session = HibernateUtil.getSessionFactory().openSession()){
-                Transaction transaction = session.beginTransaction();
-                session.merge(client);
-                transaction.commit();
-            }catch (Exception e){
-                e.printStackTrace();
+        public Vehicle getVehicleByRegistrationNumber(String registrationNumber) {
+            try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+                return session.find(Vehicle.class, registrationNumber);  // Finds the vehicle by registration number
             }
         }
 
-        public Client getClientById(int id) {
-            try(Session session = HibernateUtil.getSessionFactory().openSession()){
-                return session.find(Client.class, id);
-            }
-        }
 
-        public List<Client> findAll() {
+        public List<Vehicle > findAll() {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
                 //return session.createQuery("from Actors").list();
                 CriteriaBuilder cb = session.getCriteriaBuilder();
-                CriteriaQuery<Client> cq = cb.createQuery(Client.class);
-                Root<Client> root = cq.from(Client.class);
+                CriteriaQuery<Vehicle> cq = cb.createQuery(Vehicle.class);
+                Root<Vehicle> root = cq.from(Vehicle.class);
                 cq.select(root); // <- correct way
 
                 return session.createQuery(cq).getResultList();
             }
         }
-
     }
+
 
