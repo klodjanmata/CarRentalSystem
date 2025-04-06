@@ -2,7 +2,6 @@ package Repository;
 
 
 
-import Entities.Client;
 import Entities.Vehicle;
 import Util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -45,7 +44,7 @@ import java.util.List;
         }
 
 
-        public List<Vehicle > findAll() {
+        public List<Vehicle> findAll() {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
                 //return session.createQuery("from Actors").list();
                 CriteriaBuilder cb = session.getCriteriaBuilder();

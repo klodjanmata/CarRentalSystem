@@ -1,6 +1,5 @@
 package Repository;
 
-import Entities.Client;
 import Entities.Rental;
 import Entities.Vehicle;
 import Util.HibernateUtil;
