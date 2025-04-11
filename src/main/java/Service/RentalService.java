@@ -7,8 +7,8 @@ import Repository.RentalRepository;
 import Util.Helper;
 
 public class RentalService {
-    private final RentalService RentalService = new RentalService();
-    public void addRental(){
+
+    public void addRental() {
         System.out.println("Adding new Rental: ");
         Rental r = new Rental();
         System.out.println("Add Rental ID: ");
@@ -23,6 +23,7 @@ public class RentalService {
         r.setReturnDate(Helper.getDateFromUser());
         System.out.println("Add total cost: ");
         r.setTotalCost(Helper.getDoubleFromUser());
+
 
         RentalRepository.save(r);
     }

@@ -5,8 +5,8 @@ import Repository.ClientRepository;
 import Util.Helper;
 
 public class ClientService {
-    private final ClientService clientService = new ClientService();
-    public void addClient(){
+
+    public void addClient() {
         System.out.println("Adding new Client: ");
         Client c = new Client();
         System.out.println("Add Client ID: ");
