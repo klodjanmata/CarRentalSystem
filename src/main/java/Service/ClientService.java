@@ -12,8 +12,6 @@ public class ClientService {
     public void addClient () {
         System.out.println("Adding new Client: ");
         Client c = new Client();
-        System.out.println("Add Client ID: ");
-        c.setId(Helper.getIntFromUser());
         System.out.println("Add Clients Name: ");
         c.setName(Helper.getStringFromUser());
         System.out.println("Add Clients Surname: ");
@@ -34,8 +32,6 @@ public class ClientService {
             System.out.println("Client not found");
             return;
         }
-        System.out.println("Add Client ID: ");
-        c.setId(Helper.getIntFromUser());
         System.out.println("Add Clients Name: ");
         c.setName(Helper.getStringFromUser());
         System.out.println("Add Clients Surname: ");

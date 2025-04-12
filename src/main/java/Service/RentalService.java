@@ -18,7 +18,6 @@ public class RentalService {
     private static ClientRepository clientRepository = new ClientRepository();
 
     public void addRental() {
-        System.out.println("Adding new Rental: ");
         Rental r = new Rental();
         System.out.println("Add rental date: ");
         r.setRentalDate(Helper.getDateFromUser());
