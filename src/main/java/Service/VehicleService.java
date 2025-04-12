@@ -12,7 +12,7 @@ public class VehicleService {
     public void addVehicle() {
         System.out.println("Creating new Vehicle");
         Vehicle v = new Vehicle();
-        System.out.println("Enter make");
+        System.out.println("Enter Manufacturer");
         v.setMake(Helper.getStringFromUser());
         System.out.println("Enter Model");
         v.setModel(Helper.getStringFromUser());
@@ -27,7 +27,6 @@ public class VehicleService {
 
         vehicleRepository.save(v);
 
-
     }
 
     public void updateVehicle() {
@@ -38,7 +37,7 @@ public class VehicleService {
             System.out.println("Vehicle not found");
             return;
         }
-        System.out.println("Enter make");
+        System.out.println("Enter Manufacturer");
         v.setMake(Helper.getStringFromUser());
         System.out.println("Enter Model");
         v.setModel(Helper.getStringFromUser());
@@ -50,6 +49,7 @@ public class VehicleService {
         v.setDailyRate(Helper.getFloatFromUser());
         System.out.println("Enter if is Available:");
         v.setAvailable(Helper.getBooleanFromUser());
+        vehicleRepository.save(v);
 
     }
 
@@ -71,7 +71,6 @@ public class VehicleService {
             for (Vehicle v : vehicles) {
                 System.out.println(v);
             }
-
         }
     }
 }

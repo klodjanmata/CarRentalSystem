@@ -90,8 +90,8 @@ public class Main {
     public static void vehicleChoice() {
         System.out.println();
         int choice = -1;
-        printVehicleManagmentMenu();
         while (choice != 0) {
+            printVehicleManagmentMenu();
             choice = getChoice();
             switch (choice) {
                 case 1:

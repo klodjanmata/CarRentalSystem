@@ -35,10 +35,23 @@ public class RentalService {
         rentalRepository.save(r);
     }
 
-    // TODO make method
     private double calculateTotalCost(LocalDate start, LocalDate end, double rate) {
-        return 0;
-    }
+        if (end.isBefore(start)) {
+            throw new IllegalArgumentException("Data e përfundimit nuk mund të jetë para datës së fillimit.");
+        }
+
+        int days = 0;
+        LocalDate current = start;
+
+        while (!current.isEqual(end)) {
+            days++;
+            current = current.plusDays(1);
+        }
+
+        return days * rate;
+
+
+}
 
     public void updateRental(){
         System.out.print("Enter Rental ID: ");
