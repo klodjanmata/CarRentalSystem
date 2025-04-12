@@ -25,24 +25,9 @@ public class Rental {
     private double total;
 
 
-    public void setClientId(int intFromUser) {
+   @Override
+    public String toString() {
+        return id + ": Client ID " + client + ", Vehicle ID " + vehicle + ", From " + rentalDate + " to " + returnDate + ", Cost: $" + total;
     }
 
-    public void setTotalCost(double doubleFromUser) {
-    }
-
-    public Long VehicleId() {
-        return id ;
-    }
-
-    public Long getClientId() {
-        return id;
-    }
-
-    public Long getTotalCost() {
-        return id;
-    }
-
-    public void setVehicleId(int intFromUser) {
-    }
 }
