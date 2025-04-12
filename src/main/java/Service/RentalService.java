@@ -10,7 +10,7 @@ public class RentalService {
         System.out.println("Adding new Rental: ");
         Rental r = new Rental();
         System.out.println("Add Rental ID: ");
-        r.setId(Helper.getIntFromUser());
+        r.setId((long) Helper.getIntFromUser());
         System.out.println("Add vehicle ID: ");
         r.setVehicleId(Helper.getIntFromUser());
         System.out.println("Add Clients ID: ");

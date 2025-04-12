@@ -1,6 +1,8 @@
 package CoreFeatures;
 
+import Entities.Client;
 import Entities.Rental;
+import Entities.Vehicle;
 import Util.Helper;
 
 import java.time.LocalDate;
@@ -20,9 +22,13 @@ public class RentalManagement {
     public void addRental() {
         Rental rental = new Rental();
         System.out.print("Enter Vehicle ID: ");
-        rental.setVehicleId(Helper.getIntFromUser());
+        Long vehicalId = scanner.nextLong();
+        rental.setVehicle(new Vehicle(1L));
+
         System.out.print("Enter Client ID: ");
-        rental.setClientId(Helper.getIntFromUser());
+        Long clientId = scanner.nextLong();
+        rental.setClient(new Client());
+
         System.out.print("Enter Rental Date (yyyy-mm-dd): ");
         rental.setRentalDate(Helper.getDateFromUser());
         System.out.print("Enter Return Date (yyyy-mm-dd): ");

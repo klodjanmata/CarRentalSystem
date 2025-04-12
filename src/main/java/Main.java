@@ -89,9 +89,12 @@ public class Main {
     }
 
     public static void vehicleChoice() {
+        System.out.println();
         int choice = -1;
+        printVehicleManagmentMenu();
+        Scanner scanner = new Scanner(System.in);
+
         while (choice != 0) {
-            printVehicleManagmentMenu();
             choice = getChoice();
             switch (choice) {
                 case 1:
@@ -120,6 +123,7 @@ public class Main {
         int choice = -1;
         while (choice != 0) {
             printClientManagementMenu();
+            Scanner scanner = new Scanner(System.in);
             choice = getChoice();
             switch (choice) {
                 case 1:
@@ -148,6 +152,7 @@ public class Main {
         int choice = -1;
         while (choice != 0) {
             printRentalManagementMenu();
+            Scanner scanner = new Scanner(System.in);
             choice = getChoice();
             switch (choice) {
                 case 1:
@@ -176,6 +181,7 @@ public class Main {
         int choice = -1;
         while (choice != 0) {
             printImportExportMenu();
+            Scanner scanner = new Scanner(System.in);
             choice = getChoice();
             switch (choice) {
                 case 1:

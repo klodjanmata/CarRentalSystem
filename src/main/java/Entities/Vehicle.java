@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column
     private String make;
     @Column
@@ -24,6 +24,10 @@ public class Vehicle {
     private String licensePlate;
     private double dailyRate;
     private boolean isAvailable;
+
+    public Vehicle(Long l) {
+        this.id=l;
+    }
 
     @Override
     public String toString() {
