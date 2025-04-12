@@ -34,11 +34,12 @@ public class RentalManagement {
         System.out.print("Enter Return Date (yyyy-mm-dd): ");
         rental.setReturnDate(Helper.getDateFromUser());
         System.out.print("Enter Total Cost: ");
-        rental.setTotalCost(Helper.getDoubleFromUser());
+        rental.setTotal(Helper.getDoubleFromUser());
         rentals.add(rental);
         System.out.println("Rental added successfully.");
     }
-}
+
+    }
 
 
 

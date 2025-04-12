@@ -37,11 +37,13 @@ import java.util.List;
         }
 
 
-        public Vehicle getRentalById(String registrationNumber) {
+        public Rental getRentalById(int id) {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-                return session.find(Vehicle.class, registrationNumber);
+                return session.find(Rental.class, id);
             }
         }
+
+
 
 
         public List<Rental> findAll() {
