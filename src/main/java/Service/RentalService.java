@@ -1,8 +1,6 @@
 package Service;
 
-import Entities.Client;
 import Entities.Rental;
-import Repository.ClientRepository;
 import Repository.RentalRepository;
 import Util.Helper;
 
