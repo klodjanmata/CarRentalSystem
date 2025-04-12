@@ -37,7 +37,7 @@ public class RentalService {
 
     private double calculateTotalCost(LocalDate start, LocalDate end, double rate) {
         if (end.isBefore(start)) {
-            throw new IllegalArgumentException("Data e përfundimit nuk mund të jetë para datës së fillimit.");
+            throw new IllegalArgumentException("The end date cannot be before the start date.");
         }
 
         int days = 0;
@@ -123,7 +123,7 @@ public class RentalService {
 
     private void printVehicleList(List<Vehicle> vehicles) {
         if (vehicles == null || vehicles.isEmpty()) {
-            System.out.println("Nuk ka automjete për të shfaqur.");
+            System.out.println("There are no vehicles  to display");
             return;
         }
 
