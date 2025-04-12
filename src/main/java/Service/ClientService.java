@@ -66,7 +66,7 @@ public class ClientService {
             System.out.println("No clients available");
         } else {
             for (Client c : clients) {
-                System.out.println(c);
+                System.out.print(c);
             }
         }
 
