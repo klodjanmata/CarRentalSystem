@@ -91,17 +91,35 @@ public class RentalService {
     }
 
     public List<Vehicle> findAvailableByDate(LocalDate start, LocalDate end) {
-        List<Vehicle> allVehicles = vehicleRepository.findAll();
-        List<Rental> allRentals = rentalRepository.findAll();
-        List<Vehicle> availableVehicles = new ArrayList<Vehicle>();
+        List<Vehicle> availableVehicles = new ArrayList<>();
 
+        for (Vehicle vehicle : vehicleRepository.findAll()) {
+            boolean taken = rentalRepository.findAll().stream()
+                    .anyMatch(rental -> rental.getVehicle().equals(vehicle) &&
+                            (start.isBefore(rental.getReturnDate()) && end.isAfter(rental.getRentalDate())));
+
+            if (!taken) {
+                availableVehicles.add(vehicle);
+            }
+        }
 
         return availableVehicles;
     }
 
+
+
+
     private void printVehicleList(List<Vehicle> vehicles) {
-        for (Vehicle v : vehicles){
-            System.out.println(v);
+        if (vehicles == null || vehicles.isEmpty()) {
+            System.out.println("Nuk ka automjete për të shfaqur.");
+            return;
+        }
+
+        for (Vehicle v : vehicles) {
+            System.out.println(v.toString());
         }
     }
+
 }
+
+
