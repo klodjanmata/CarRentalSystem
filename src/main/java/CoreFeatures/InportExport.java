@@ -23,11 +23,11 @@ public class InportExport {
             writer.write("ID,Vehicle ID,Client ID,Rental Date,Return Date,Total Cost\n");
             for (Rental rental : rentals) {
                 writer.write(rental.getId() + "," +
-                        rental.VehicleId() + "," +
-                        rental.getClientId() + "," +
+                        rental.getId() + "," +
+                        rental.getClient() + "," +
                         rental.getRentalDate() + "," +
                         rental.getReturnDate() + "," +
-                        rental.getTotalCost() + "\n");
+                        rental.getTotal() + "\n");
             }
             System.out.println("Rental transactions exported successfully.");
         } catch (IOException e) {

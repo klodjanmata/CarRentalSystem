@@ -30,4 +30,5 @@ public class Rental {
         return id + ": Client ID " + client + ", Vehicle ID " + vehicle + ", From " + rentalDate + " to " + returnDate + ", Cost: $" + total;
     }
 
+
 }
