@@ -20,7 +20,6 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("You selected: Vehicle Management.");
-                    printVehicleManagmentMenu();
                     vehicleChoice();
                     break;
                 case 2:
@@ -92,8 +91,6 @@ public class Main {
         System.out.println();
         int choice = -1;
         printVehicleManagmentMenu();
-        Scanner scanner = new Scanner(System.in);
-
         while (choice != 0) {
             choice = getChoice();
             switch (choice) {
@@ -111,7 +108,7 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("Back to main menu");
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid choice. Please choose a number between 0 and 4.");
                     break;

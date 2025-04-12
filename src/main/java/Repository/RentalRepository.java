@@ -16,7 +16,7 @@ import java.util.List;
     public class RentalRepository {
 
 
-        public static void save(Rental rental) {
+        public void save(Rental rental) {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
                 Transaction transaction = session.beginTransaction();
                 session.merge(rental);
