@@ -19,6 +19,7 @@ public class Rental {
     private Long id;
     @ManyToOne
     private Vehicle vehicle; // many to one
+    @ManyToOne
     private Client client; // many to one
     private LocalDate rentalDate;
     private LocalDate returnDate;

@@ -11,6 +11,7 @@ import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.time.LocalDate;
 import java.util.List;
 
     public class VehicleRepository {
@@ -55,6 +56,8 @@ import java.util.List;
                 return session.createQuery(cq).getResultList();
             }
         }
+
+
 
     }
 
