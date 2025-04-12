@@ -126,13 +126,13 @@ public class Main {
                     clientService.addClient();
                     break;
                 case 2:
-                    System.out.println("Update Client");
+                     clientService.UpdateClient();
                     break;
                 case 3:
-                    System.out.println("Delete Client");
+                    clientService.DeleteClient();
                     break;
                 case 4:
-                    System.out.println("View Client List");
+                    clientService.ViewClientList();
                     break;
                 case 0:
                     System.out.println("Back to main menu");
@@ -152,16 +152,16 @@ public class Main {
             choice = getChoice();
             switch (choice) {
                 case 1:
-                    System.out.println("Add Rental");
+                    rentalService.addRental();
                     break;
                 case 2:
-                    System.out.println("Update Rental");
+                    rentalService.updateRental();
                     break;
                 case 3:
-                    System.out.println("Delete Rental");
+                    rentalService.deleteRental();
                     break;
                 case 4:
-                    System.out.println("View Rental Transactions");
+                    rentalService.findAllRentalTranscations();
                     break;
                 case 0:
                     System.out.println("Back to main menu");
