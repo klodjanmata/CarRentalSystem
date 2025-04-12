@@ -98,16 +98,15 @@ public class Main {
                     vehicleService.addVehicle();
                     break;
                 case 2:
-                    System.out.println("Update Vehicle");
+                    vehicleService.updateVehicle();
                     break;
                 case 3:
-                    System.out.println("Delete Vehicle");
+                    vehicleService.deleteVehicle();
                     break;
                 case 4:
-                    System.out.println("View Vehicle Inventory");
+                    vehicleService.viewInventory();
                     break;
                 case 0:
-                    System.out.println("Back to main menu");
                     return;
                 default:
                     System.out.println("Invalid choice. Please choose a number between 0 and 4.");
