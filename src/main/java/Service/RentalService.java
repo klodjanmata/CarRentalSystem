@@ -6,6 +6,7 @@ import Repository.ClientRepository;
 import Repository.RentalRepository;
 import Repository.VehicleRepository;
 import Util.Helper;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class RentalService {
     private static ClientRepository clientRepository = new ClientRepository();
 
     public void addRental() {
+        System.out.println("Adding new Rental: ");
         Rental r = new Rental();
         System.out.println("Add rental date: ");
         r.setRentalDate(Helper.getDateFromUser());
@@ -24,7 +26,7 @@ public class RentalService {
         r.setReturnDate(Helper.getDateFromUser());
         System.out.println("Available vehicles: ");
         printVehicleList(findAvailableByDate(r.getRentalDate(), r.getReturnDate()));
-        System.out.println("Add vehicle Licence Plate: ");
+        System.out.println("Add Vehicle ID: ");
         r.setVehicle(vehicleRepository.getVehicleByRegistrationNumber(Helper.getStringFromUser()));
         System.out.println("Add Clients ID: ");
         r.setClient(clientRepository.getClientById(Helper.getIntFromUser()));
@@ -34,6 +36,7 @@ public class RentalService {
         rentalRepository.save(r);
     }
 
+    // TODO make method
     private double calculateTotalCost(LocalDate start, LocalDate end, double rate) {
         if (end.isBefore(start)) {
             throw new IllegalArgumentException("The end date cannot be before the start date.");

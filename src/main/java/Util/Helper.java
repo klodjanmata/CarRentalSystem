@@ -3,6 +3,7 @@ package Util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
@@ -32,17 +33,16 @@ public class Helper {
         System.out.print("FORMAT: dd.MM.yyyy\t");
         String date = sc.nextLine();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-        try{
+        try {
             Date d = sdf.parse(date);
-            return null;
-        }catch (ParseException e){
-            Date d = new Date();
-            d.setYear(90);
-            d.setMonth(0);
-            d.setDate(1);
-            return null;
+            // Convert Date to LocalDate
+            return d.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        } catch (ParseException e) {
+            System.out.println("Invalid date format. Please try again.");
+            return getDateFromUser(); // or return a default value / null
         }
     }
+
 
     public static float getFloatFromUser(){
         Scanner input = new Scanner(System.in);
