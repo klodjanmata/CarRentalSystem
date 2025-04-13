@@ -6,7 +6,6 @@ import Repository.ClientRepository;
 import Repository.RentalRepository;
 import Repository.VehicleRepository;
 import Util.Helper;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
