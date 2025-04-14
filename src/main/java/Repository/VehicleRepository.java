@@ -20,7 +20,7 @@ import java.util.List;
         public void save(Vehicle vehicle) {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
                 Transaction transaction = session.beginTransaction();
-                session.merge(vehicle);  // Persisting the vehicle to the database
+                session.merge(vehicle);
                 transaction.commit();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -30,7 +30,7 @@ import java.util.List;
         public void delete(Vehicle vehicle) {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
                 Transaction transaction = session.beginTransaction();
-                session.remove(vehicle);  // Using remove to delete the vehicle
+                session.remove(vehicle);
                 transaction.commit();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -47,7 +47,7 @@ import java.util.List;
 
         public List<Vehicle> findAll() {
             try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-                //return session.createQuery("from Actors").list();
+
                 CriteriaBuilder cb = session.getCriteriaBuilder();
                 CriteriaQuery<Vehicle> cq = cb.createQuery(Vehicle.class);
                 Root<Vehicle> root = cq.from(Vehicle.class);

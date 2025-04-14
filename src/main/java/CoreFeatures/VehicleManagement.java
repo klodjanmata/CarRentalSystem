@@ -1,8 +1,6 @@
 package CoreFeatures;
 
 
-
-
     import Entities.Vehicle;
     import lombok.Getter;
     import lombok.Setter;
@@ -60,6 +58,7 @@ import java.util.Scanner;
             }
             return getVehicleById;
             }
+
         }
 
 

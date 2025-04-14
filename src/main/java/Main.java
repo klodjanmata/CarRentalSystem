@@ -5,7 +5,8 @@ import Service.ClientService;
 import Service.RentalService;
 import Util.Helper;
 
-public class Main {
+public class
+Main {
     private static VehicleService vehicleService = new VehicleService();
     private static ClientService clientService = new ClientService();
     private static RentalService rentalService = new RentalService();
@@ -208,4 +209,5 @@ public class Main {
         }
         return choice;
     }
+
 }

@@ -23,7 +23,7 @@ public class Helper {
          Scanner scanner=new Scanner(System.in);
         while (!scanner.hasNextDouble()) {
             System.out.println("Invalid input. Please enter a valid number.");
-            scanner.next(); // Consume the invalid input
+            scanner.next();
         }
         return scanner.nextDouble();
     }
@@ -35,7 +35,7 @@ public class Helper {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         try {
             Date d = sdf.parse(date);
-            // Convert Date to LocalDate
+
             return d.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         } catch (ParseException e) {
             System.out.println("Invalid date format. Please try again.");
